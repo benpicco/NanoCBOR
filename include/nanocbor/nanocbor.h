@@ -202,6 +202,32 @@ int nanocbor_get_type(const nanocbor_value_t *value);
 bool nanocbor_at_end(const nanocbor_value_t *it);
 
 /**
+ * @brief Retrieve a positive integer as uint8_t from the stream
+ *
+ * The resulting @p value is undefined if the result is an error condition
+ *
+ * @param[in]   cvalue  CBOR value to decode from
+ * @param[out]  value   returned positive integer
+ *
+ * @return              number of bytes read
+ * @return              negative on error
+ */
+int nanocbor_get_uint8(nanocbor_value_t *cvalue, uint8_t *value);
+
+/**
+ * @brief Retrieve a positive integer as uint16_t from the stream
+ *
+ * The resulting @p value is undefined if the result is an error condition
+ *
+ * @param[in]   cvalue  CBOR value to decode from
+ * @param[out]  value   returned positive integer
+ *
+ * @return              number of bytes read
+ * @return              negative on error
+ */
+int nanocbor_get_uint16(nanocbor_value_t *cvalue, uint16_t *value);
+
+/**
  * @brief Retrieve a positive integer as uint32_t from the stream
  *
  * The resulting @p value is undefined if the result is an error condition
